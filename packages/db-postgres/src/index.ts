@@ -1,6 +1,6 @@
 import { Prisma, PrismaClient } from "@prisma/client";
 
-export class DbClient {
+export class DBClient {
     private ready: Promise<void>;
     public prisma: PrismaClient;
 

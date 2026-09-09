@@ -1,4 +1,5 @@
-CREATE EXTENSION IF NOT EXISTS vector;
+-- CreateExtension
+CREATE EXTENSION IF NOT EXISTS "vector";
 
 -- CreateTable
 CREATE TABLE "Document" (
@@ -15,7 +16,7 @@ CREATE TABLE "Chunk" (
     "id" TEXT NOT NULL,
     "documentId" TEXT NOT NULL,
     "content" TEXT NOT NULL,
-    "embedding" vector(1536) NOT NULL,
+    "embedding" vector(384) NOT NULL,
 
     CONSTRAINT "Chunk_pkey" PRIMARY KEY ("id")
 );
