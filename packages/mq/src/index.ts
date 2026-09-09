@@ -3,7 +3,7 @@ import amqp from 'amqplib';
 export class MQClient {
     private ready: Promise<void>;
     private channel!: amqp.Channel;
-    private connection!: amqp.Connection;
+    private connection!: amqp.ChannelModel;
 
     constructor(url: string) {
         this.ready = this._connect(url);
@@ -26,7 +26,6 @@ export class MQClient {
 
     public async sendToQueue(queue: string, msg: object) {
         await this.ready;
-        // FIXED: Added { persistent: true } here to match your system design goals
         this.channel.sendToQueue(queue, Buffer.from(JSON.stringify(msg)), { persistent: true });
     }
 

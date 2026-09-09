@@ -1,5 +1,5 @@
 {
-  "name": "@repo/db-postgres",
+  "name": "@scholar-bot/db-postgres",
   "version": "1.0.0",
   "private": true,
   "main": "dist/index.js",

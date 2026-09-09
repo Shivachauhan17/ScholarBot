@@ -8,5 +8,19 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@langchain/textsplitters": "^1.0.1",
+    "@scholar-bot/mq": "*",
+    "@scholar-bot/db-postgres": "*",
+    "openai": "^6.49.0",
+    "pdf-parse": "^2.4.5",
+    "piscina": "^5.3.2",
+    "uuid": "^14.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.5.0",
+    "@types/pdf-parse": "^1.1.5",
+    "@types/uuid": "^10.0.0"
   }
 }

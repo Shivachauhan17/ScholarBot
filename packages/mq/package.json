@@ -1,5 +1,5 @@
 {
-  "name": "@repo/mq",
+  "name": "@scholar-bot/mq",
   "version": "1.0.0",
   "private": true,
   "main": "dist/index.js",
