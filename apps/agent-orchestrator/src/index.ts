@@ -53,7 +53,7 @@ async function bootstrap() {
                 LIMIT 3;
             `;
 
-            const context = searchResults.map(res => res.content).join('\n\n');
+            const context = searchResults.map((res: { content: string }) => res.content).join('\n\n');
             console.log(`[Agent] Retrieved ${searchResults.length} context chunks. Generating answer...`);
 
             let systemPrompt = `You are a helpful research assistant. Answer the user's question using ONLY the provided context. If the answer is not in the context, say "I cannot answer this based on the provided documents."\n\nContext:\n${context}`;
