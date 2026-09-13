@@ -16,6 +16,7 @@
     "@langchain/openai": "^1.5.8",
     "@scholar-bot/db-postgres": "*",
     "@scholar-bot/mq": "*",
+    "dotenv": "^17.4.2",
     "openai": "^6.49.0"
   }
 }
