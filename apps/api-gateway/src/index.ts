@@ -25,7 +25,11 @@ else {
 async function bootstrapWorker() {
     const app = express()
 
-    app.use(cors());
+    app.use(cors({
+        origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+        methods: ['GET', 'POST'],
+        credentials: true
+    }));
     app.use(express.json({ limit: '50mb' }))
 
     const rabbitUrl = process.env.RABBITMQ_URL || "amqp://guest:guest@localhost:5672"
