@@ -6,6 +6,7 @@
     "packages/*"
   ],
   "scripts": {
+    "start:cloud": "concurrently \"node apps/api-gateway/dist/index.js\" \"node apps/agent-orchestrator/dist/index.js\" \"node apps/ingestion-worker/dist/index.js\"",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint"
@@ -15,5 +16,8 @@
     "turbo": "^2.0.0",
     "typescript": "^5.0.0"
   },
-  "packageManager": "npm@10.8.2"
+  "packageManager": "npm@10.8.2",
+  "dependencies": {
+    "concurrently": "^9.2.4"
+  }
 }

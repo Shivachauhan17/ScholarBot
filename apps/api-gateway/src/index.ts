@@ -36,7 +36,7 @@ async function bootstrapWorker() {
 
     const replyQueue = await channel.assertQueue('', { exclusive: true });
     const pendingRequests = new Map();
-    
+
     channel.consume(replyQueue.queue, (msg) => {
         if (msg) {
             const correlationId = msg.properties.correlationId;
@@ -96,7 +96,7 @@ async function bootstrapWorker() {
 
     app.post('/api/chat', async (req, res) => {
         try {
-            const { question } = req.body;
+            const { question, persona, history } = req.body;
             if (!question) return res.status(400).json({ error: 'Question is required' });
 
             const correlationId = crypto.randomUUID();
@@ -109,7 +109,7 @@ async function bootstrapWorker() {
                 }, 30000);
             })
 
-            channel.sendToQueue('agent.queries', Buffer.from(JSON.stringify({ question })), {
+            channel.sendToQueue('agent.queries', Buffer.from(JSON.stringify({ question, persona, history })), {
                 correlationId: correlationId,
                 replyTo: replyQueue.queue
             });

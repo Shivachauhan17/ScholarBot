@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv';
+dotenv.config({ path: '../../.env' });
+
 import Piscina from "piscina";
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
