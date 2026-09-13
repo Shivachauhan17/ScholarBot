@@ -8,5 +8,14 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@huggingface/inference": "^4.13.28",
+    "@langchain/community": "^1.1.29",
+    "@langchain/core": "^1.1.38",
+    "@langchain/openai": "^1.5.8",
+    "@scholar-bot/db-postgres": "*",
+    "@scholar-bot/mq": "*",
+    "openai": "^6.49.0"
   }
 }

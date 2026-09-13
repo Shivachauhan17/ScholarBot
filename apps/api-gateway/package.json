@@ -8,5 +8,15 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@scholar-bot/db-postgres": "*",
+    "@scholar-bot/mq": "*",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6"
   }
 }
